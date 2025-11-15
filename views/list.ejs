@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Students List</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Students</h1>
+
+<% if (students.length === 0) { %>
+  <p>No students found.</p>
+<% } else { %>
+
+<table>
+  <tr>
+    <th>Roll</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Guardian Phone</th>
+    <th>Skills</th>
+  </tr>
+
+  <% students.forEach(s => { %>
+    <tr>
+      <td><%= s.roll %></td>
+      <td><%= s.name %></td>
+
+      <!-- Day Scholar or Hosteller -->
+      <td>
+        <%= s.guardianPhone && s.guardianPhone.trim() !== "" 
+            ? "Hosteller" 
+            : "Day Scholar" %>
+      </td>
+
+      <!-- Guardian phone only for hostellers -->
+      <td>
+        <%= s.guardianPhone && s.guardianPhone.trim() !== "" 
+            ? s.guardianPhone 
+            : "-" %>
+      </td>
+
+      <td><%= s.skills.join(", ") %></td>
+    </tr>
+  <% }) %>
+
+</table>
+
+<% } %>
+
+<br>
+<a href="/">Home</a>
+
+</body>
+</html>

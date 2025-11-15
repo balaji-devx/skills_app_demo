@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Student</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Add Student</h1>
+
+<form action="/addStudent" method="post">
+
+  <label>Roll Number</label>
+  <input type="text" name="roll" required>
+
+  <label>Name</label>
+  <input type="text" name="name" required>
+
+  <label>Guardian Phone (optional)</label>
+  <input type="text" name="guardianPhone" pattern="[0-9]{10}" placeholder="10-digit number">
+
+  <label>Skills:</label><br>
+
+  <input type="checkbox" name="skills" value="dance"> Dance
+  <br>
+  <input type="checkbox" name="skills" value="drawing"> Drawing
+  <br>
+  <input type="checkbox" name="skills" value="painting"> Painting
+  <br>
+  <input type="checkbox" name="skills" value="singing"> Singing
+  <br>
+  <input type="checkbox" name="skills" value="storyWriting"> Story Writing
+  <br>
+  <input type="checkbox" name="skills" value="chess"> Chess
+  <br>
+  <input type="checkbox" name="skills" value="cricket"> Cricket
+  <br>
+  <input type="checkbox" name="skills" value="soccer"> Soccer
+  <br>
+  <input type="checkbox" name="skills" value="orchestra"> Orchestra
+  <br><br>
+
+  <button>Add Student</button>
+</form>
+
+<br>
+<a href="/">Back to Home</a>
+
+</body>
+</html>

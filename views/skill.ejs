@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skill Search</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Skill Results for "<%= pattern %>"</h1>
+
+<% if (students.length === 0) { %>
+  <p>No students found with this skill.</p>
+<% } else { %>
+
+<table>
+  <tr>
+    <th>Roll</th>
+    <th>Name</th>
+    <th>Guardian Phone</th>
+    <th>Status</th>
+    <th>Skills</th>
+  </tr>
+
+  <% students.forEach(s => { %>
+    <tr>
+      <td><%= s.roll %></td>
+      <td><%= s.name %></td>
+
+      <!-- Guardian phone OR '-' -->
+      <td><%= (s.guardianPhone && s.guardianPhone.trim() !== "") ? s.guardianPhone : "-" %></td>
+
+      <!-- Hosteller OR Day Scholar -->
+      <td><%= (s.guardianPhone && s.guardianPhone.trim() !== "") ? "Hosteller" : "Day Scholar" %></td>
+
+      <!-- Skills -->
+      <td><%= s.skills.join(", ") %></td>
+    </tr>
+  <% }) %>
+
+</table>
+
+<% } %>
+
+<br>
+<a href="/">Home</a>
+
+</body>
+</html>
